@@ -2,7 +2,7 @@
 # -*- encoding: utf-8 -*-
 '''
 @file         :Leetcode 13 Roman to Integer.py
-@explain      :
+@explain      : Beat 89%
 @date         :2023/04/21 11:31:20
 @author       :
 @version      :1.0
