@@ -7,13 +7,15 @@
 @version      :1.0
 '''
 
+
+
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
         counter = 0
-        for i in range(len(nums)):
+        for i in range(len(nums)): # only check the list first one if it does not match then pop it
             tmp = nums[0]
             nums.pop(0)
-            counter += 1
+            counter += 1 # need to check how many eles got kick out
             if (target -tmp) in nums: 
                 ans2 = nums.index(target -tmp) + counter
                 return [i,ans2]
