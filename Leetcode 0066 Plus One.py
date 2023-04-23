@@ -18,6 +18,11 @@ class Solution:
         ans = [int(i) for i in str(counter)]
         return ans
         
-bbb = Solution().plusOne(digits=[9])
+### second way
 
-print(bbb)
+class Solution:
+    def plusOne(self, digits: list[int]) -> list[int]:
+
+        a = int("".join([str(i) for i in digits])) + 1
+        a = [int(i) for i in str(a)]
+        return a
