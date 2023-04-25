@@ -24,3 +24,25 @@ class Solution:
 print(Solution().mySqrt(x = 9))
 
 ### kind a little stupid....
+### change to binary search
+class Solution:
+    def mySqrt(self, x: int) -> int:
+        #### save some memory
+        if x <= 0:
+            return 0
+        elif x <=3:
+            return 1
+        elif x <= 8:
+            return 2
+        right = x
+        ######
+        left = 3
+        while right >= left:
+            middle = (right + left)//2
+            if middle*middle == x:
+                return middle
+            elif middle*middle > x:
+                right = middle - 1
+            else:
+                left = middle + 1
+        return right
