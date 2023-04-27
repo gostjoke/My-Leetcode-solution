@@ -13,3 +13,19 @@ class Solution:
                 return ind
         else:
             return len(nums)
+        
+## binary search version
+
+class Solution:
+    def searchInsert(self, nums: list[int], target: int) -> int:
+        left = 0 
+        right = len(nums) - 1
+        while right >= left:
+            mid = (right + left) //2
+            if target > nums[mid]:
+                left += 1
+            elif target < nums[mid]:
+                right -= 1
+            elif nums[mid] == target:
+                return mid
+        return left
