@@ -3,7 +3,7 @@ class Solution:
     def maxProfit(self, prices: list[int]) -> int:
         max_profit = 0
         best_price = prices[0]
-        for i in prices:
+        for i in prices[1:]:
             
             if i < best_price:
                 best_price = i
