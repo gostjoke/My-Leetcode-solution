@@ -5,7 +5,6 @@
 @file         :Leetcode 0034 Find First and Last Position of Element in Sorted Array.py
 @explain      :
 @date         :2023/05/23 15:03:55
-@author       :Tien-Wei Hsu
 @version      :1.0
 '''
 
