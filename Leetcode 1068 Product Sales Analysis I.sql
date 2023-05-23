@@ -2,7 +2,6 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 
-@file         :Leetcode 0034 Find First and Last Position of Element in Sorted Array.py
 @explain      :
 @date         :2023/05/23 15:03:55
 @version      :1.0
