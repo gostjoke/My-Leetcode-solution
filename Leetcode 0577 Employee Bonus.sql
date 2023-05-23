@@ -1,0 +1,15 @@
+'''
+#!/usr/bin/env python
+# -*- encoding: utf-8 -*-
+#!/usr/bin/env python
+# -*- encoding: utf-8 -*-
+'''
+@date         :2023/05/23 15:22:38
+@version      :1.0
+'''
+
+# Write your MySQL query statement below
+select e.name, b.bonus from employee e
+left join bonus b
+on e.empId = b.empId
+where bonus < 1000 or bonus is null
