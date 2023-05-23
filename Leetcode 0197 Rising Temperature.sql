@@ -3,7 +3,6 @@
 # -*- encoding: utf-8 -*-
 
 @date         :2023/05/23 15:10:55
-@author       :Tien-Wei Hsu
 @version      :1.0
 '''
 
