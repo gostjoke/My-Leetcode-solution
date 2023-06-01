@@ -5,13 +5,12 @@
 '''
 
 class Solution:
-    def searchRange(self, nums: list[int], target: int) -> list[int]:
-        min_po = -1
-        max_po = -1
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        min_po = max_po = -1
         for ind, i in enumerate(nums):
             if i == target and min_po == -1:
-                min_po = ind
-                max_po = ind
+                min_po =  max_po = ind
             elif i == target:
                 max_po = ind
+
         return [min_po, max_po]
