@@ -10,3 +10,19 @@ class Solution:
                 tmp += int(i)
             num = tmp
         return num
+
+"""
+07/14/2023
+"""
+
+class Solution:
+    def addDigits(self, num: int) -> int:
+        while num > 9:
+            ans = 0
+            while num:
+                ans += (num%10)
+                num = num//10
+                print(num)
+
+            num = ans
+        return num
