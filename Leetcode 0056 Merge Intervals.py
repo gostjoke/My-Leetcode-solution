@@ -1,3 +1,7 @@
+'''
+08/08/2023
+'''
+
 class Solution:
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
         intervals = sorted(intervals, key=lambda x:x[0])
