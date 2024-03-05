@@ -5,7 +5,7 @@ class Solution:
         hast = [0]*26
         for i in words[0]:
             hast[ord(i) - ord("a")] += 1
-        for j in words[0:]:
+        for j in words[1:]:
             hast2 = [0]*26
             for x in j:
                 hast2[ord(x) - ord("a")] += 1
@@ -13,12 +13,14 @@ class Solution:
             for ind in range(26):
                 hast[ind] = min(hast[ind],hast2[ind])
         output = []
-        print(hast)
         for ind, i in enumerate(hast):
             if i != 0:
-                for _ in range(i):
-                    output.append(chr(97+ind))
+                output.extend([chr(97+ind)] * i)
         return output
+
+
+    
+        
 
 
     
