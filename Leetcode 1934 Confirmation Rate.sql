@@ -13,8 +13,7 @@ from Signups left join
                 on t1.user_id = t2.user_id) as t3
 on t3.user_id = Signups.user_id
 order by confirmation_rate
-
-
+    
 ## Chatgpt improved this
 SELECT 
     S.user_id, 
@@ -34,3 +33,10 @@ LEFT JOIN (
 ) AS C
 ON S.user_id = C.user_id
 ORDER BY confirmation_rate;
+
+# A better way to use avg
+SELECT s.user_id, ROUND(AVG(IF(c.action="confirmed",1,0)),2) AS confirmation_rate
+FROM Signups AS s
+LEFT JOIN Confirmations AS c
+ON s.user_id = c.user_id
+GROUP BY s.user_id;
