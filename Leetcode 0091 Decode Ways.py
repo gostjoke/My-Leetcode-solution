@@ -11,7 +11,7 @@ class Solution:
             one_dig = int(s[i-1])
             two_dig = int(s[i-2:i])
             
-            if 1 <= one_dig <= 9:
+            if one_dig != 0:
                 dp[i] += dp[i - 1]
             
             if 10 <= two_dig <= 26:
