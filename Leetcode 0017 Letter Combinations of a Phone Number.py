@@ -1,67 +1,63 @@
-#!/usr/bin/env python
-# -*- encoding: utf-8 -*-
-'''
-17. Letter Combinations of a Phone Number
-Beats
-99.91%
-Memory
-13.8 MB
-Beats
-63.96%
-@date         :2023/04/24 11:47:20
-'''
-
+## 2025/07/03
+## backtracking
 class Solution:
-    def myAtoi(self, s: str) -> int:
-        zero_check = 0
-        no_start = 0
-        ans = ""
-        for i in s:
-            if i == "0":
-                zero_check =1
-            elif i != "0" and i.isnumeric():
-                no_start = 1
-            elif zero_check == 1 and i.isnumeric() is False and no_start != 1:
-                return 0
-        
-        ##### "    -88827   5655  U"
-        space_check = 0
-        no_start = 0
-        ans = ""
-        check = 0
-        no_num = 0
-        
-        for i in s: 
-            
-            if space_check == 0 and i == " ":
-                space_check = 1
-            if i == " " and no_start != 0 and i != "+" and i != "-":
-                break
-            elif no_num == 2:
-                break
-            elif no_num == 1 and i.isnumeric() is False:
-                break
-            elif i == "+":
-                no_num += 1
-            elif i == "-" and no_start ==0:
-                no_num += 1
-                check = 1
-            elif i.isnumeric() is False and i !=" ":
-                break
-            elif i != " ":
-                ans += i
-                no_start = 1      
-        
-        try:
-            b = int(ans)
-        except:
-            return 0
-        if check == 1:
-            b *= (-1)
+    def letterCombinations(self, digits: str) -> List[str]:
+        if not digits:
+            return []
+        dic = {
+            '2':"abc",
+            '3':"def",
+            '4':"ghi",
+            '5':"jkl",
+            '6':"mno",
+            '7':"pqrs",
+            '8':"tuv",
+            '9':"wxyz",
+        }
+        def backtrack(idx, comb):
+            if idx == len(digits):
+                res.append(comb[:])
+                return 
+            for letter in dic[digits[idx]]:
+                backtrack(idx+1, comb+letter)
+        res =[]
+        backtrack(0,"")
+        return res
+## easy way
+class Solution:
+    def letterCombinations(self, digits: str) -> List[str]:
+        l = len(digits)
+        if l == 0:
+            return []
+        ans = []
+        dic = {
+            '2':"abc",
+            '3':"def",
+            '4':"ghi",
+            '5':"jkl",
+            '6':"mno",
+            '7':"pqrs",
+            '8':"tuv",
+            '9':"wxyz",
+        }
+        if l == 1:
+            return [i for i in dic[digits]]
 
-        if b < (-2)**31:
-            return (-2)**31
-        elif b > (2**31) - 1:
-            return (2**31) - 1
-        else:
-                return b
+        elif l == 2:
+            for b in dic[digits[1]]:
+                for a in dic[digits[0]]:
+                    ans.append(f"{a}{b}")
+            return ans
+        elif l == 3:
+            for c in dic[digits[2]]:
+                for b in dic[digits[1]]:
+                    for a in dic[digits[0]]:
+                        ans.append(f"{a}{b}{c}")
+            return ans
+        elif l == 4:
+            for d in dic[digits[3]]:
+                for c in dic[digits[2]]:
+                    for b in dic[digits[1]]:
+                        for a in dic[digits[0]]:
+                            ans.append(f"{a}{b}{c}{d}")
+            return ans
