@@ -1,3 +1,4 @@
+// 20250716
 func isAnagram(s string, t string) bool {
     s1 := strings.Split(s, "")
     t1 := strings.Split(t, "")
