@@ -2,6 +2,19 @@
 class Solution:
     def mergeAlternately(self, word1: str, word2: str) -> str:
         ans = ""
+        i = 0
+        while i < len(word1) or i < len(word2):
+            if i < len(word1):
+                ans += word1[i]
+            if i < len(word2):
+                ans += word2[i]
+            i+=1
+        return ans
+
+
+class Solution:
+    def mergeAlternately(self, word1: str, word2: str) -> str:
+        ans = ""
         odd = 0
         w1 = [i for i in word1]
         w2 = [i for i in word2]
