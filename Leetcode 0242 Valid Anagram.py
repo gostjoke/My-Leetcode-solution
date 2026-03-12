@@ -1,6 +1,12 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 
+# 2026/03/12
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        return Counter(s) == Counter(t)
+
+
 # 2025/07/16 update
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
@@ -19,3 +25,4 @@ class Solution:
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         return True if ''.join(sorted(s)) == ''.join(sorted(t)) else False
+
