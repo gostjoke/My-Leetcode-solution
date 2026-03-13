@@ -3,8 +3,7 @@
 func containsDuplicate(nums []int) bool {
     seen := make(map[int]struct{})
     for _, i := range(nums) {
-        _, exists := seen[i]
-        if exists {
+        if _, exists := seen[i]; exists {
             return true
         } else {
             seen[i] = struct{}{}
